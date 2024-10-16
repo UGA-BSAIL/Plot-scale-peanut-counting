@@ -3,22 +3,28 @@ The repository is for the paper: Robotic Plot-Scale Peanut Yield Estimation usin
 
 ## Pipeline
 <p align="center">
-  <img src="figures/fig1_diagram_.jpg" alt="Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction." style="width: 70%;">
+  <img src="figures/figure1-workflow.png" alt="Fig. 1: Workflow of automated plot-scale peanut pod counting using image stitching and deep learning detection." style="width: 70%;">
 </p>
 <p align="center"><i>Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction.</i></p>
 
-## SAM-based Pixel-wise labeling
+## LoFTR-based image stitching
 <p align="center">
-  <img src="figures/fig4_SAM-based-labeling_.jpg" alt="Figure 2. Illustration of the proposed automated pixel-wise label generation process for blueberry fruits at different maturiety stages. (a) Bounding boxes from a previous detection dataset (Z. Li et al., 2023); (b) Bounding boxes re-classified into three categories: immature (yellow), semi-mature(red), and mature (blue), using a maturity classifier; (c) Pixel-wise mask labels generated using the Segment Anything Model." style="width: 70%;">
+  <img src="figures/figure2-stitching.png" alt="Figure 2. The procedure of the image stitching algorithm using LoFTR. " style="width: 70%;">
 </p>
-<p align="center"><i>Figure 2. Illustration of the proposed automated pixel-wise label generation process for blueberry fruits at different maturiety stages. (a) Bounding boxes from a previous detection dataset (Z. Li et al., 2023); (b) Bounding boxes re-classified into three categories: immature (yellow), semi-mature(red), and mature (blue), using a maturity classifier; (c) Pixel-wise mask labels generated using the Segment Anything Model.</i></p>
+<p align="center"><i>The procedure of the image stitching algorithm using LoFTR. </i></p>
 
-## BerryNet Architecture
+## Customized RT-DETR Architecture
 <p align="center">
-  <img src="figures/fig7_BerryNet-architecture_.jpg" alt="Figure 3. Illustration of the BerryNet framework. It incorporated three major enhancements: 1) enhancing P2 layer to better capture features of small objects; 2) implementing BiFPN for improved feature fusion, and 3) replacing C2f block with the more efficient C2f-faster block to accelerate inference. " style="width: 70%;">
+  <img src="figures/figure4-result.png" alt="Figure 3.Illustration of plot-scale pod counting" style="width: 70%;">
 </p>
-<p align="center"><i>Figure 3. Illustration of the BerryNet framework. It incorporated three major enhancements: 1) enhancing P2 layer to better capture features of small objects; 2) implementing BiFPN for improved feature fusion, and 3) replacing C2f block with the more efficient C2f-faster block to accelerate inference. </i></p>
+<p align="center"><i>Figure 4.Illustration of plot-scale pod counting. </i></p>
 
+
+## Result example
+<p align="center">
+  <img src="figures/figure3-customized-rtdetr.png" alt="Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling." style="width: 70%;">
+</p>
+<p align="center"><i>Figure 4.Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling. </i></p>
 
 
 ## Prerequisites
@@ -27,39 +33,30 @@ The repository is for the paper: Robotic Plot-Scale Peanut Yield Estimation usin
 ```
 pip install ultralytics
 ```
-[Segment Anything Model](https://github.com/ultralytics/ultralytics)
-```
-pip install git+https://github.com/facebookresearch/segment-anything.git
-```
-
-
 
 ## Environment Setting
 Clone the repository to local machine:
 ```
-git clone https://github.com/UGA-BSAIL/BerryNet.git
+git clone https://github.com/UGA-BSAIL/Plot-scale-peanut-counting.git
 ```
 Create a virtual env and Install the required packages :
 ```
-conda create -n BerryNet python=3.8
-conda activate BerryNet
+conda create -n rt-detr-peanut python=3.8
+conda activate rt-detr-peanut
 pip install ultralytics
-pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 We modified the original YOLOv8 repository for more module support (yolov8-BerryNet\ultralytics\nn\extra_modules). For letting ultralytics point to the modified repository, 
 ```
 pip uninstall ultralytics
 ```
 
+
 ## Dataset Download
-This paper released four datasets for comprhensive research of blueberry, which are availiable on kaggle:
-  * [Blueberry Fruit Detection](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-detection-dataset)
-  * [Blueberry Maturity Classification](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-maturiety-classification)
-  * [Blueberry Pixel-wise Segmentation](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-segmentation-with-segment-anything-model)
-  * [Blueberry Cluster Detection](https://www.kaggle.com/datasets/zhengkunli3969/blueberry-cluster-detection)
+This paper released a dataset for model training and validation of peanut detection, which is available on kaggle:
+  * [NARS-Peanut-Detection](https://www.kaggle.com/datasets/zhengkunli3969/mars-peanut-detection)
 
 
-## SAM-based Pixel-wise labeling
+## LoFTR-based image stitching
 This method requred the detection dataset as the initial prompt, and weight of maturity classifier and SAM for inference.
 MOdified the path of the dataset and the model in the script of SAM-based-labeling.py:
 ```
