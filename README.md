@@ -43,6 +43,8 @@ Create a virtual env and Install the required packages :
 conda create -n rt-detr-peanut python=3.8
 conda activate rt-detr-peanut
 pip install ultralytics
+pip install scikit-learn
+pip install kornia
 ```
 We modified the original YOLOv8 repository for more module support (yolov8-BerryNet\ultralytics\nn\extra_modules). For letting ultralytics point to the modified repository, 
 ```
@@ -56,17 +58,23 @@ This paper released a dataset for model training and validation of peanut detect
 
 
 ## LoFTR-based image stitching
-This method requred the detection dataset as the initial prompt, and weight of maturity classifier and SAM for inference.
-MOdified the path of the dataset and the model in the script of SAM-based-labeling.py:
+We provide a script to stitch the sequential images based on the LoFTR matching method.
 ```
-python script\pixle-wise_labeling.py
+python script/image_stitching/loftr-stitching-gpu.py
 ```
   &nbsp;Parameters:  
-    &nbsp; &nbsp;- image_folder = '/path/to/image_folder'  
-    &nbsp; &nbsp;- annotation_folder = '/path/to/annotation_folder'  
-    &nbsp; &nbsp;- checkpoint = torch.load('/path/to/best_model.pth', map_location=torch.device('cpu'))  # path to the maturity classifier  
-    &nbsp; &nbsp;- sam_checkpoint = "/path/to/sam_vit_h_4b8939.pth"  # path to the SAM model  
+    &nbsp; &nbsp;- folder_path  = '/path/to/image_folder'
+     &nbsp; &nbsp; &nbsp; - folder structure: folder_path/sequences_folder/image_1, image2, ...
 
+## Mentashape-based image stitching
+We provide two scripts to stitch the sequential images of single/double views. 
+ &nbsp; script/image_stitching/metashape_single_view.py
+ &nbsp; image_stitching/metashape-stitching_left_right.py
+Open the Metashape and load the script to process multiple plots.
+  &nbsp;Parameters:  
+    &nbsp; &nbsp;- frame_path  = '/path/to/image_folder'
+     &nbsp; &nbsp; - save_path =  ''/path/to/save_orthomosaic_folder'
+     
 
 ## Model Training
 The model architecture of customized RT-RTDETR was defined in customized_rtdetr/ultralytics/cfg/models/rt-detr/rtdetr-resnet18-FasterBlock-ADown-Dysample.yaml.
@@ -89,7 +97,7 @@ The pre-trained models are available at [weight](weight).
 ## Inference on plot-scale image
 For model inference, run the script of BerryNet_phenotyping_extraction_split.py under the script folder:
 ```
-python script\BerryNet_phenotyping_extraction_split.py
+python script/plot-scale_detection/plot-scale_detection.py
 ```
   &nbsp;Parameters:  
     &nbsp; &nbsp;- model_path = " "    # path to the BerryNet model  
