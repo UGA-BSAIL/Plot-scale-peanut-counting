@@ -11,20 +11,19 @@ The repository is for the paper: Robotic Plot-Scale Peanut Yield Estimation usin
 <p align="center">
   <img src="figures/figure2-stitching.png" alt="Figure 2. The procedure of the image stitching algorithm using LoFTR. " style="width: 70%;">
 </p>
-<p align="center"><i>The procedure of the image stitching algorithm using LoFTR. </i></p>
+<p align="center"><i>Fig. 2: The procedure of the image stitching algorithm using LoFTR. </i></p>
 
 ## Customized RT-DETR Architecture
 <p align="center">
-  <img src="figures/figure4-result.png" alt="Figure 3.Illustration of plot-scale pod counting" style="width: 70%;">
+  <img src="figures/figure3-customized-rtdetr.png" alt="Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling." style="width: 70%;">
 </p>
-<p align="center"><i>Figure 4.Illustration of plot-scale pod counting. </i></p>
-
+<p align="center"><i>Fig. 3: Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling. </i></p>
 
 ## Result example
 <p align="center">
-  <img src="figures/figure3-customized-rtdetr.png" alt="Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling." style="width: 70%;">
+  <img src="figures/figure4-result.png" alt="Figure 4.Illustration of plot-scale pod counting" style="width: 70%;">
 </p>
-<p align="center"><i>Figure 4.Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling. </i></p>
+<p align="center"><i>Fig. 4: Illustration of plot-scale pod counting. </i></p>
 
 
 ## Prerequisites
