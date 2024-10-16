@@ -52,7 +52,7 @@ pip uninstall ultralytics
 
 ## Dataset Download
 This paper released a dataset for model training and validation of peanut detection, which is available on kaggle:
-  * [NARS-Peanut-Detection](https://www.kaggle.com/datasets/zhengkunli3969/mars-peanut-detection)
+  * [MARS-Peanut-Detection](https://www.kaggle.com/datasets/zhengkunli3969/mars-peanut-detection)
 
 
 ## LoFTR-based image stitching
@@ -69,25 +69,24 @@ python script\pixle-wise_labeling.py
 
 
 ## Model Training
-BerryNet's architecture was defined in yolov8-BerryNet\ultralytics\models\v8\yolov8-c2f_faster-p2-bifpn-seg.yaml.
-For training the model, run the script of train_blueberry_c2f-faster_p2_bifpn_seg_640.py (larger model select the 1280) under the path of yolov8-BerryNet folder:
+The model architecture of customized RT-RTDETR was defined in customized_rtdetr/ultralytics/cfg/models/rt-detr/rtdetr-resnet18-FasterBlock-ADown-Dysample.yaml.
+For training the model, run the script: 
+    -  train-detr-r18-fasterBlock-ADown-Dysample-peanut-1280.py (or select the 640) under the path of customized_rtdetr folder:
 ```
-cd yolov8-BerryNet
-python train_blueberry_c2f-faster_p2_bifpn_seg_640.py
+cd customized_rtdetr
+python train-detr-r18-fasterBlock-ADown-Dysample-peanut-1280.py
 ```
 Before running the script, please modify the path of the dataset and the model configuration file in the script. 
 You can try more yaml files for different model architecture.
 
 
-## Pretrained models
+## Pre-trained models
 The pre-trained models are available at [weight](weight).  
     &nbsp; &nbsp;- Maturity_classifier:  
     &nbsp; &nbsp;- Segment Anything Model:  
-    &nbsp; &nbsp;- Cluster Detection:  
-    &nbsp; &nbsp;- Fruit Segmentaiton:  
 
 
-## Model Inference
+## Inference on plot-scale image
 For model inference, run the script of BerryNet_phenotyping_extraction_split.py under the script folder:
 ```
 python script\BerryNet_phenotyping_extraction_split.py
