@@ -90,8 +90,8 @@ You can try more yaml files for different model architecture.
 
 ## Pre-trained models
 The pre-trained models are available at [weight](weight).  
-    &nbsp; &nbsp;- Maturity_classifier:  
-    &nbsp; &nbsp;- Segment Anything Model:  
+    &nbsp; &nbsp;- customized_rtdetr:  
+    &nbsp; &nbsp;- yolov8:  
 
 
 ## Inference on plot-scale image
