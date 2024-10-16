@@ -3,25 +3,25 @@ The repository is for the paper: Robotic Plot-Scale Peanut Yield Estimation usin
 
 ## Pipeline
 <p align="center">
-  <img src="figures/figure1-workflow.png" alt="Fig. 1: Workflow of automated plot-scale peanut pod counting using image stitching and deep learning detection." style="width: 70%;">
+  <img src="figures/figure1-workflow.png" alt="Fig. 1: Workflow of automated plot-scale peanut pod counting using image stitching and deep learning detection." style="width: 80%;">
 </p>
 <p align="center"><i>Fig. 1: Diagram of the proposed blueberry fruit phenotyping workflow involving four stages: data collection, training dataset generation, model training, and phenotyping traits extraction.</i></p>
 
 ## LoFTR-based image stitching
 <p align="center">
-  <img src="figures/figure2-stitching.png" alt="Figure 2. The procedure of the image stitching algorithm using LoFTR. " style="width: 70%;">
+  <img src="figures/figure2-stitching.png" alt="Figure 2. The procedure of the image stitching algorithm using LoFTR. " style="width: 80%;">
 </p>
 <p align="center"><i>Fig. 2: The procedure of the image stitching algorithm using LoFTR. </i></p>
 
 ## Customized RT-DETR Architecture
 <p align="center">
-  <img src="figures/figure3-customized-rtdetr.png" alt="Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling." style="width: 70%;">
+  <img src="figures/figure3-customized-rtdetr.png" alt="Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling." style="width: 80%;">
 </p>
 <p align="center"><i>Fig. 3: Illustration of improved RT-DETR detector. (a) overview of customized RT-DETR detector; (b) Backbone of ResNet18-FasterBlock; (c) Up sampling based on DySample; (d) Adown module for down sampling. </i></p>
 
 ## Result example
 <p align="center">
-  <img src="figures/figure4-result.png" alt="Figure 4.Illustration of plot-scale pod counting" style="width: 70%;">
+  <img src="figures/figure4-result.png" alt="Figure 4.Illustration of plot-scale pod counting" style="width: 90%;">
 </p>
 <p align="center"><i>Fig. 4: Illustration of plot-scale pod counting. </i></p>
 
