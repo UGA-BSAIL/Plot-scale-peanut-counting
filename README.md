@@ -83,8 +83,9 @@ Open the Metashape and load the script to process multiple plots.
 
 ## Model Training
 The model architecture of customized RT-RTDETR was defined in customized_rtdetr/ultralytics/cfg/models/rt-detr/rtdetr-resnet18-FasterBlock-ADown-Dysample.yaml.
+
 For training the model, run the script: 
-    -  train-detr-r18-fasterBlock-ADown-Dysample-peanut-1280.py (or select the 640) under the path of customized_rtdetr folder:
+    &nbsp; &nbsp; -  train-detr-r18-fasterBlock-ADown-Dysample-peanut-1280.py (or select the 640) under the path of customized_rtdetr folder:
 ```
 cd customized_rtdetr
 python train-detr-r18-fasterBlock-ADown-Dysample-peanut-1280.py
