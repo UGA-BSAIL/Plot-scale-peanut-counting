@@ -68,12 +68,19 @@ python script/image_stitching/loftr-stitching-gpu.py
 
 ## Mentashape-based image stitching
 We provide two scripts to stitch the sequential images of single/double views. 
+
  &nbsp; script/image_stitching/metashape_single_view.py
+ 
  &nbsp; image_stitching/metashape-stitching_left_right.py
+ 
 Open the Metashape and load the script to process multiple plots.
+
   &nbsp;Parameters:  
+  
     &nbsp; &nbsp;- frame_path  = '/path/to/image_folder'
+    
      &nbsp; &nbsp; - save_path =  ''/path/to/save_orthomosaic_folder'
+     
      
 
 ## Model Training
