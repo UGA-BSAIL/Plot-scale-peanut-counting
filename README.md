@@ -115,5 +115,12 @@ python script/plot-scale_detection/plot-scale_detection.py
 If you find this work or code useful, please cite:
 
 ```
-****************************
+@inproceedings{li2024robotic,
+  title={Robotic Plot-scale Peanut Counting and Yield Estimation using LoFTR-based Image Stitching and Improved RT-DETR},
+  author={Li, Zhengkun and Xu, Rui and Li, Changying and Tillman, Barry and Brown, Nino},
+  booktitle={2024 ASABE Annual International Meeting},
+  pages={1},
+  year={2024},
+  organization={American Society of Agricultural and Biological Engineers}
+}
 ```
