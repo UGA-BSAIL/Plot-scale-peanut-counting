@@ -115,6 +115,15 @@ python script/plot-scale_detection/plot-scale_detection.py
 If you find this work or code useful, please cite:
 
 ```
+@article{li2025plot,
+  title={Plot-scale peanut yield estimation using a phenotyping robot and transformer-based image analysis},
+  author={Li, Zhengkun and Xu, Rui and Brown, Nino and Tillman, Barry L and Li, Changying},
+  journal={Smart Agricultural Technology},
+  volume={12},
+  pages={101154},
+  year={2025},
+  publisher={Elsevier}
+}
 @inproceedings{li2024robotic,
   title={Robotic Plot-scale Peanut Counting and Yield Estimation using LoFTR-based Image Stitching and Improved RT-DETR},
   author={Li, Zhengkun and Xu, Rui and Li, Changying and Tillman, Barry and Brown, Nino},
